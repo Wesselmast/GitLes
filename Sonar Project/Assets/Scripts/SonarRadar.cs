@@ -18,8 +18,8 @@ public class SonarRadar : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Y))
             {
-                echo.transform.position = transform.position;
-                Instantiate(echo);
+                
+                Instantiate(echo, transform);
                 coolDownPeriod = coolDownTime;
             }
         }
