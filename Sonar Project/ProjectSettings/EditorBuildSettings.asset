@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Start.unity
     guid: 58cf26dc4e6a10148894e0ea812a312c
   - enabled: 1
-    path: Assets/Scenes/Test.unity
+    path: Assets/Scenes/Game.unity
     guid: e8d8da4bf69a94bc0937a780cf63582d
   - enabled: 1
     path: Assets/Scenes/Death.unity

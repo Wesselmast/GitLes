@@ -19,10 +19,9 @@ public class Needs : MonoBehaviour {
         if (foodLevel <= 0 || waterLevel <= 0)
         {
             //rip player
-            Destroy(gameObject);
             int theScene = SceneManager.GetActiveScene().buildIndex;
             if (theScene < SceneManager.sceneCountInBuildSettings)
-                SceneManager.LoadScene(theScene + 1);
+                SceneManager.LoadScene(theScene + 1); 
         }
     }
 

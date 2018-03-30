@@ -12,7 +12,12 @@ public class ObjectEmitter : MonoBehaviour {
     public GameObject echo;
     public float scaleSpeed = 0.5f;
     public float theTime = 2f;
+    public AudioClip echoStart;
+    public AudioClip echoEnd;
+
     bool isScaling = false;
+
+    public AudioSource echopulse;
 
     private void FixedUpdate()
     {
@@ -29,8 +34,11 @@ public class ObjectEmitter : MonoBehaviour {
         }
     }
 
-    IEnumerator echoScale()
+        IEnumerator echoScale()
     {
+        echopulse.clip = echoStart;
+        if (!echopulse.isPlaying)
+            echopulse.Play();
         triggersphere.transform.localScale += new Vector3(scaleSpeed, scaleSpeed, scaleSpeed);
         visual.transform.localScale += new Vector3(scaleSpeed *50, scaleSpeed*50, scaleSpeed *50);
         yield return new WaitForSeconds(theTime);
@@ -40,6 +48,9 @@ public class ObjectEmitter : MonoBehaviour {
 
     IEnumerator echoShrink()
     {
+        echopulse.pitch = -1;
+        if (!echopulse.isPlaying)
+            echopulse.Play();
         triggersphere.transform.localScale -= new Vector3(scaleSpeed, scaleSpeed, scaleSpeed);
         visual.transform.localScale -= new Vector3(scaleSpeed * 50, scaleSpeed*50, scaleSpeed * 50);
         yield return new WaitForSeconds(theTime + 0.1f);

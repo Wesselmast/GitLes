@@ -13,9 +13,14 @@ public class LoadNextScene : MonoBehaviour {
         Button btn = myButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
-	
-	// Update is called once per frame
-	void TaskOnClick()
+
+    private void Update()
+    {
+        Debug.Log(SceneManager.GetActiveScene().name);
+    }
+
+    // Update is called once per frame
+    void TaskOnClick()
     {
         int theScene = SceneManager.GetActiveScene().buildIndex;
         
